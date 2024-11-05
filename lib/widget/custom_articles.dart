@@ -17,7 +17,7 @@ class CustomArticles extends StatelessWidget {
     return  Column(
       children: [
         Image.network(image),
-        SizedBox(height: 30,),
+        SizedBox(height: 31,),
         Text(title,style: TextStyle(fontWeight: FontWeight.bold),),
         Text(decription),
 
