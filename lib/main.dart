@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:news_app_2/provider/articals_provider.dart';
-import 'package:news_app_2/screens/home_screen.dart';
+import 'package:news_app_2/providers/news_provider.dart';
+import 'package:news_app_2/screens/news_page.dart';
 import 'package:provider/provider.dart';
 
-void main() {
+void main() async {
   runApp(const MyApp());
 }
 
@@ -12,14 +12,13 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MultiProvider(
-      providers: [
-        ChangeNotifierProvider(create: (context) => ArticalsProvider(),)
-      ],
-      child: MaterialApp(
-        home: HomeScreen(),
+    return ChangeNotifierProvider(
+      create: (context) => NewsProvider(),
+      child: const MaterialApp(
+        debugShowCheckedModeBanner: false,
+        // title: 'Flutter Demo',
+        home: NewsPage(),
       ),
     );
   }
 }
-
