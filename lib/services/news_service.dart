@@ -5,10 +5,10 @@ import '../model/news_model.dart';
 class NewsService {
   static Dio dio = Dio();
 
-  static Future<NewsModel> fetchData() async {
+  static Future<NewsModel> fetchData({required String category}) async {
     try {
       Response response = await dio.get(
-          "https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=39c5f0038d274b86ac6cbe948b7e1ccf");
+          "https://newsapi.org/v2/top-headlines?country=us&category=$category&apiKey=a410b1724f84452c8df8a810efe34642");
       return NewsModel.fromJson(response.data);
     } catch (error) {
       throw "Error: $error";

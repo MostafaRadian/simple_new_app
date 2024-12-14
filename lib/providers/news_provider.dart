@@ -6,8 +6,8 @@ import '../services/news_service.dart';
 class NewsProvider extends ChangeNotifier {
   NewsModel? data;
 
-  Future<void> getNews() async {
-    data = await NewsService.fetchData();
+  Future<void> getNews(String value) async {
+    data = await NewsService.fetchData(category: value);
     notifyListeners();
   }
 }

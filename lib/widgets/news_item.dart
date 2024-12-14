@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import '../screens/news_details.dart'; // Import the NewsDetailPage
 
 class NewsItem extends StatelessWidget {
@@ -10,7 +11,6 @@ class NewsItem extends StatelessWidget {
   final String author; // Added author
 
   const NewsItem({
-    super.key,
     required this.image,
     required this.title,
     required this.description,
@@ -62,3 +62,14 @@ class NewsItem extends StatelessWidget {
     );
   }
 }
+
+/*
+container
+* Coulmn(
+* image,
+* title,
+* description,
+*
+* )
+*
+* */

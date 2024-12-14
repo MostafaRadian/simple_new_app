@@ -5,7 +5,9 @@ import '../providers/news_provider.dart';
 import '../widgets/news_item.dart';
 
 class NewsPage extends StatelessWidget {
-  const NewsPage({super.key});
+  String category;
+
+  NewsPage({required this.category});
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +22,7 @@ class NewsPage extends StatelessWidget {
       body: Consumer<NewsProvider>(builder: (context, value, child) {
         var newsModel = value.data;
         if (newsModel == null) {
-          value.getNews();
+          value.getNews(category);
           return const Center(
             child: CircularProgressIndicator(),
           );
@@ -28,13 +30,14 @@ class NewsPage extends StatelessWidget {
           return ListView.separated(
             itemCount: newsModel.news.length,
             itemBuilder: (context, index) => NewsItem(
-              image: newsModel.news[index]["urlToImage"],
-              title: newsModel.news[index]["title"],
-              description: newsModel.news[index]["description"],
-              content: newsModel.news[index]["content"], // Pass content
-              publishedAt: newsModel.news[index]
-                  ["publishedAt"], // Pass publishedAt
-              author: newsModel.news[index]["author"], // Pass author
+              image: newsModel.news[index]["urlToImage"] ?? "Null",
+              title: newsModel.news[index]["title"] ?? "Null",
+              description: newsModel.news[index]["description"] ?? "Null",
+              content:
+                  newsModel.news[index]["content"] ?? "Null", // Pass content
+              publishedAt: newsModel.news[index]["publishedAt"] ??
+                  "Null", // Pass publishedAt
+              author: newsModel.news[index]["author"] ?? "Null", // Pass author
             ),
             separatorBuilder: (context, index) => const SizedBox(
               height: 10,
