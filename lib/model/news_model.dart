@@ -4,6 +4,6 @@ class NewsModel {
   NewsModel({required this.news});
 
   factory NewsModel.fromJson(Map<String, dynamic> json) {
-    return NewsModel(news: json['articles']);
+    return NewsModel(news: json["articles"]);
   }
 }

@@ -10,7 +10,7 @@ class NewsItem extends StatelessWidget {
   final String publishedAt; // Added publishedAt
   final String author; // Added author
 
-  const NewsItem({
+  const NewsItem({super.key, 
     required this.image,
     required this.title,
     required this.description,
@@ -47,12 +47,12 @@ class NewsItem extends StatelessWidget {
             child: Column(
               children: [
                 Image.network(image),
-                SizedBox(height: 10),
+                const SizedBox(height: 10),
                 Text(
                   title,
-                  style: TextStyle(fontWeight: FontWeight.bold),
+                  style: const TextStyle(fontWeight: FontWeight.bold),
                 ),
-                SizedBox(height: 10),
+                const SizedBox(height: 10),
                 Text(description),
               ],
             ),

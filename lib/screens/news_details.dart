@@ -20,7 +20,7 @@ class NewsDetailPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Details" , style: TextStyle(fontSize: 40,color: const Color.fromARGB(255, 209, 203, 11)) ,),
+        title: const Text("Details" , style: TextStyle(fontSize: 40,color: Color.fromARGB(255, 209, 203, 11)) ,),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -34,24 +34,24 @@ class NewsDetailPage extends StatelessWidget {
               children: [
                 Text(
                   title,
-                  style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                  style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
                 ),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 Text(
                   description,
-                  style: TextStyle(fontSize: 16, color: Colors.grey),
+                  style: const TextStyle(fontSize: 16, color: Colors.grey),
                 ),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 Text(content), // Show the content from JSON
-                SizedBox(height: 100),
+                const SizedBox(height: 100),
                 Text(
                   "Published At: $publishedAt", // Display publishedAt
-                  style: TextStyle(fontSize: 14, color: Colors.grey),
+                  style: const TextStyle(fontSize: 14, color: Colors.grey),
                 ),
-                SizedBox(height: 10),
+                const SizedBox(height: 10),
                 Text(
                   "Author: $author", // Display author
-                  style: TextStyle(fontSize: 14, color: Colors.grey),
+                  style: const TextStyle(fontSize: 14, color: Colors.grey),
                 ),
               ],
             ),

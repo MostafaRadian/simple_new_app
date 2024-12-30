@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import '../widgets/category_button.dart';
 
 class NewsCategoryPage extends StatelessWidget {
+  const NewsCategoryPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

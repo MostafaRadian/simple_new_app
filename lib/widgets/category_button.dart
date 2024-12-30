@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:news_app_2/providers/news_provider.dart';
+import 'package:provider/provider.dart';
 
 import '../screens/news_page.dart';
 
@@ -8,14 +10,17 @@ class CategoryButton extends StatelessWidget {
   String category;
 
   CategoryButton({
+    super.key,
     required this.color,
     required this.icon,
     required this.category,
   });
 
+  @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
+        Provider.of<NewsProvider>(context, listen: false).data = null;
         Navigator.push(
             context,
             MaterialPageRoute(

@@ -7,13 +7,13 @@ import '../widgets/news_item.dart';
 class NewsPage extends StatelessWidget {
   String category;
 
-  NewsPage({required this.category});
+  NewsPage({super.key, required this.category});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           "News",
           style: TextStyle(color: Colors.red, fontWeight: FontWeight.bold),
         ),
@@ -21,8 +21,9 @@ class NewsPage extends StatelessWidget {
       ),
       body: Consumer<NewsProvider>(builder: (context, value, child) {
         var newsModel = value.data;
+        //value.getNews(category);
         if (newsModel == null) {
-          value.getNews(category);
+          value.getNews(category: category);
           return const Center(
             child: CircularProgressIndicator(),
           );
@@ -30,7 +31,7 @@ class NewsPage extends StatelessWidget {
           return ListView.separated(
             itemCount: newsModel.news.length,
             itemBuilder: (context, index) => NewsItem(
-              image: newsModel.news[index]["urlToImage"] ?? "Null",
+              image: newsModel.news[index]["urlToImage"] ?? "no image",
               title: newsModel.news[index]["title"] ?? "Null",
               description: newsModel.news[index]["description"] ?? "Null",
               content:
