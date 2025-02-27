@@ -8,6 +8,5 @@ class NewsProvider extends ChangeNotifier {
 
   Future<void> getNews({required String category}) async {
     data = await NewsService.fetchData(category: category);
-    notifyListeners();
   }
 }
