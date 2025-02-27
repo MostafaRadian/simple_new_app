@@ -10,7 +10,8 @@ class NewsItem extends StatelessWidget {
   final String publishedAt; // Added publishedAt
   final String author; // Added author
 
-  const NewsItem({super.key, 
+  const NewsItem({
+    super.key,
     required this.image,
     required this.title,
     required this.description,
@@ -24,7 +25,7 @@ class NewsItem extends StatelessWidget {
     return GestureDetector(
       onTap: () {
         // Navigate to NewsDetailPage with the content, publishedAt, and author
-        Navigator.push(
+        Navigator.pop(
           context,
           MaterialPageRoute(
             builder: (context) => NewsDetailPage(
