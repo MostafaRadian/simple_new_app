@@ -25,7 +25,7 @@ class NewsItem extends StatelessWidget {
     return GestureDetector(
       onTap: () {
         // Navigate to NewsDetailPage with the content, publishedAt, and author
-        Navigator.pop(
+        Navigator.push(
           context,
           MaterialPageRoute(
             builder: (context) => NewsDetailPage(

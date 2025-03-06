@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 import '../screens/news_page.dart';
 
 class CategoryButton extends StatelessWidget {
-  Color color;
-  IconData icon;
-  String category;
+  final Color color;
+  final IconData icon;
+  final String category;
 
-  CategoryButton({
+  const CategoryButton({
     super.key,
     required this.color,
     required this.icon,
