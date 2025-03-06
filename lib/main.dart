@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       create: (BuildContext context) => NewsProvider(),
       child: const MaterialApp(
         debugShowCheckedModeBanner: false,
-        // title: 'Flutter Demo',
+        title: 'Simple News App',
         home: NewsCategoryPage(),
       ),
     );

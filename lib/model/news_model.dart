@@ -1,9 +1,9 @@
 class NewsModel {
-  List<int> news;
+  List<dynamic> news;
 
   NewsModel({required this.news});
 
   factory NewsModel.fromJson(Map<String, dynamic> json) {
-    return NewsModel(news: json["article"]);
+    return NewsModel(news: json["articles"]);
   }
 }

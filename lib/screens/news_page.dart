@@ -5,9 +5,9 @@ import '../providers/news_provider.dart';
 import '../widgets/news_item.dart';
 
 class NewsPage extends StatelessWidget {
-  String category;
+  final String category;
 
-  NewsPage({super.key, required this.category});
+  const NewsPage({super.key, required this.category});
 
   @override
   Widget build(BuildContext context) {
@@ -28,6 +28,7 @@ class NewsPage extends StatelessWidget {
             child: CircularProgressIndicator(),
           );
         } else {
+          value.data = null;
           return ListView.separated(
             itemCount: newsModel.news.length,
             itemBuilder: (context, index) => NewsItem(
@@ -40,9 +41,7 @@ class NewsPage extends StatelessWidget {
                   "Null", // Pass publishedAt
               author: newsModel.news[index]["author"] ?? "Null", // Pass author
             ),
-            separatorBuilder: (context, index) => const SizedBox(
-              height: 10,
-            ),
+            separatorBuilder: (context, index) => const SizedBox(height: 10),
           );
         }
       }),
