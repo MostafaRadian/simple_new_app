@@ -7,7 +7,7 @@ class NewsService {
 
   static Future<NewsModel> fetchData({required String category}) async {
     Response response = await dio.post(
-        "https://newsapi.org/v2/top-headlines?country=us&category=$category&apiKey=");
+        "https://newsapi.org/v2/top-headlines?country=us&category=$category&apiKey=a410b1724f84452c8df8a810efe34642");
     if (response.statusCode == 200) {
       return NewsModel.fromJson(response.data);
     } else {
