@@ -1,5 +1,5 @@
 class NewsModel {
-  List<int> news;
+  List<dynamic> news;
 
   NewsModel({required this.news});
 
